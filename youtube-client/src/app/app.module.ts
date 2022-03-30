@@ -4,11 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Header } from './header/header.component';
-import { AuthComponent } from './auth/auth.component';
-import { SearchComponent } from './search/search.component';
-import { SortingComponent } from './sorting/sorting.component';
 import { ResultsComponent } from './results/results.component';
-import { CardComponent } from './card/card.component';
+import { AuthComponent } from './header/auth/auth.component';
+import { SearchComponent } from './header/search/search.component';
+import { SortingComponent } from './header/sorting/sorting.component';
 
 
 @NgModule({
@@ -17,9 +16,8 @@ import { CardComponent } from './card/card.component';
     Header,
     AuthComponent,
     SearchComponent,
-    SortingComponent,
-    ResultsComponent,
-    CardComponent
+    SortingComponent, 
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
