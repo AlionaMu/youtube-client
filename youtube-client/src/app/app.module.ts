@@ -8,6 +8,7 @@ import { ResultsComponent } from './results/results.component';
 import { AuthComponent } from './header/auth/auth.component';
 import { SearchComponent } from './header/search/search.component';
 import { SortingComponent } from './header/sorting/sorting.component';
+import { SettingsButtonComponent } from './header/settings-button/settings-button.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SortingComponent } from './header/sorting/sorting.component';
     AuthComponent,
     SearchComponent,
     SortingComponent, 
-    ResultsComponent
+    ResultsComponent, 
+    SettingsButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+.auth {
+  width: 24px;
+  height: 24px;
+  background: center / contain no-repeat url('../../../assets/auth.svg');
+  margin-left: 5px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}
