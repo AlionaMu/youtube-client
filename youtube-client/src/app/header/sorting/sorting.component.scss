@@ -1,0 +1,32 @@
+.sorting__span {
+  margin-left: 35px;
+}
+
+.sorting__button {
+  margin-left: 8px;
+  background: none;
+  outline: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.sorting__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #E5E5E5;
+  padding: 10px;
+}
+#criteria-input {
+  border: none;
+  outline: none;
+}
+.criteria-input {
+  font-size: 14px;
+  color: blue;
+  margin: 0 10px;
+}
