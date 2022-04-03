@@ -1,16 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { SearchService } from '../services/search-service';
 
 @Component({
-  selector: 'app-results',
+  selector: 'results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']
 })
-/*export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnChanges {
+  @Input() searchRequestWord?: string;
 
-  constructor() { }
+  constructor(private searchService: SearchService) {
+  }
 
   ngOnInit(): void {
   }
 
-}*/
-export class ResultsComponent {}
+  ngOnChanges(changes: SimpleChanges): void {
+
+    if (!this.searchRequestWord) return;
+
+  }
+}

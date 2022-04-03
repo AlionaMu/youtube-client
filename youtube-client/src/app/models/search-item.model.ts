@@ -37,7 +37,7 @@ interface ThumbnailsItem {
 
 interface Localized {
     title: string;
-    description: number;
+    description: string;
 }
 
 interface Statistics {
