@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
 
 @Component({
     selector: 'app-header',
@@ -6,12 +6,22 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
     styleUrls: ['header.component.scss']
 })
 export class Header implements OnInit {
-    @Output() searchRequestUrl = new EventEmitter<string>();
+
+    @Output() openSorting: EventEmitter<boolean> = new EventEmitter();
+
+    public isSorting: boolean = false;
+
 
     ngOnInit(): void {
+      
     }
 
-    searchRequest(url: string) {
-        this.searchRequestUrl.emit(url);
-      }
+    showSorting(): void {
+        this.isSorting ? this.isSorting = false : this.isSorting = true;
+        if (this.isSorting) {
+          this.openSorting.emit(true);
+        } else {
+          this.openSorting.emit(false);
+        }
+    }
 }

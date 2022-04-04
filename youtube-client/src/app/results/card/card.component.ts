@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ResultItem } from '../models/result-item.model';
+import { SearchItem } from '../../models/search-item.model';
 
 @Component({
-  selector: 'app-card',
+  selector: 'card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
-  
+export class Card implements OnInit {
+  // @Input() video?: ResultItem | undefined;
+  @Input() video: SearchItem | undefined;
+
   constructor() { }
 
   ngOnInit(): void {

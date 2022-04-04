@@ -1,12 +1,4 @@
 <div class="results__wrapper">
- <!-- <ul class="results__list"
-  *ngIf="searchItems">
-    <li class="search-item"
-    *ngFor="let item of (searchItems | filter: filterWord | sort: sortState); index as i" 
-    [colorfulBorder]="item.publishedDate">
-      <search-result-item
-      [item]="item">
-      </search-result-item>
-    </li>
-  </ul>-->
+  <card *ngFor="let video of (videos); index as i" [video]="video">
+  </card>
 </div>
