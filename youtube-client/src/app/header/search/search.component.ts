@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { SearchService } from '../../services/search-service';
-
 
 
 @Component({
@@ -9,12 +7,12 @@ import { SearchService } from '../../services/search-service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  @Output() buttonClick = new EventEmitter();
- // @Output() searchRequest = new EventEmitter<string>();
+  @Output() public submitInput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private searchService: SearchService) { }
+  constructor() { }
 
-  searchClick(search: boolean): void {
-    this.buttonClick.emit(search);
+  public submitForm(action: boolean): void {
+    console.log('jjj')
+    this.submitInput.emit(action);
   }
 }

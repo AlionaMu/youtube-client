@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'youtube-client';
+  public hasResponse: boolean = false;
+
+  public openResults(): void {
+    this.hasResponse = true;
+  }
 }
