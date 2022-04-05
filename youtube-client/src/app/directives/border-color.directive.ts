@@ -1,4 +1,5 @@
 import { Directive, Input, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Colors } from '../entities/colors';
 
 @Directive({
   selector: '[appBorderColor]'
@@ -16,13 +17,13 @@ export class BorderDirective implements OnInit {
     let dateDiff: number = Math.ceil(Math.abs(dateNow.getTime() - publishDate.getTime())
      / (1000 * 3600 * 24));
     if (dateDiff < 7) {
-      color = 'blue';
+      color = Colors.Blue;
     } else if (dateDiff >= 7 && dateDiff < 30) {
-      color = 'green';
+      color = Colors.Green;
     } else if (dateDiff >= 30 && dateDiff < 180) {
-      color = 'yellow';
+      color = Colors.Yellow;
     } else {
-      color = 'red';
+      color = Colors.Red;
     }
     this.renderer2.setStyle(this.elementRef.nativeElement, 'border-bottom', `5px solid ${color}`);
   }
