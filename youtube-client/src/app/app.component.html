@@ -1,3 +1,3 @@
 <app-header (showSorting)="showSorting($event)" (openResults)="openResults()"></app-header>
-<app-sorting *ngIf="isSortingOpen" class="sorting__wrapper"></app-sorting>
+<app-sorting *ngIf="isSortingOpen"></app-sorting>
 <app-results *ngIf="hasResponse"></app-results>

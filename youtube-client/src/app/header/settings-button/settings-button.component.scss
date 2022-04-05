@@ -4,4 +4,8 @@
   border: none;
   background: url('../../../assets/search_settings.svg');
   background-size: cover;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 }

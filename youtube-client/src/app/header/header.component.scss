@@ -7,7 +7,7 @@ $bg-color: #E5E5E5;
 .header__wrapper {
     background-color: $bg-color;
     padding: 5px 10vw;
-    margin: 20px;
+    margin: 20px 20px 0;
 }
 
 .header__visible {
@@ -20,23 +20,23 @@ $bg-color: #E5E5E5;
     display: flex;
     margin-left: 30px;
     align-items: center;
-    & .header__settings-button {
-        display: block;
-        width: 24px;
-        height: 24px;
-        outline: none;
-        background-color: #2F7FEE;
-        padding: 1px;
-        border-radius: 7px;
-        box-shadow: 2px 0px 4px 0px #2f80ed;
-        &:hover {
-          cursor: pointer;
-          opacity: 0.9;
-        }
-      }
+}
+
+.header__settings-button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  outline: none;
+  background-color: #2F7FEE;
+  padding: 1px;
+  border-radius: 7px;
+  box-shadow: 2px 0px 4px 0px #2f80ed;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 }
 
 auth {
     display: flex;
 }
-  
