@@ -12,7 +12,6 @@ export class SearchComponent {
   constructor() { }
 
   public submitForm(action: boolean): void {
-    console.log('jjj')
     this.submitInput.emit(action);
   }
 }

@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'youtube-client';
   public hasResponse: boolean = false;
+  public isSortingOpen: boolean = false;
 
   public openResults(): void {
     this.hasResponse = true;
+  }
+
+  public showSorting(isOpen: boolean): void {
+    console.log(isOpen, 'open')
+    isOpen ? this.isSortingOpen = true : this.isSortingOpen = false;
   }
 }

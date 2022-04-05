@@ -6,21 +6,21 @@ import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
     styleUrls: ['header.component.scss']
 })
 export class HeaderComponent {
-  @Output() openSorting: EventEmitter<boolean> = new EventEmitter();
+  @Output() showSorting: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() openResults: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public isSorting: boolean = false;
+  public isSortingOpen: boolean = false;
 
   submitForm(value: boolean) {
     this.openResults.emit(value);
   }
 
-  showSorting(): void {
-      this.isSorting ? this.isSorting = false : this.isSorting = true;
-      if (this.isSorting) {
-        this.openSorting.emit(true);
-      } else {
-        this.openSorting.emit(false);
-      }
+  toggleSorting(): void {
+    this.isSortingOpen ? this.isSortingOpen = false : this.isSortingOpen = true;
+    if (this.isSortingOpen) {
+      this.showSorting.emit(true);
+    } else {
+      this.showSorting.emit(false);
+    }
   }
 }
