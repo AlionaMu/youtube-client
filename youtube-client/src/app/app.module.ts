@@ -4,25 +4,33 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Header } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { ResultsComponent } from './results/results.component';
 import { Card } from './results/card/card.component';
 import { AuthComponent } from './header/auth/auth.component';
 import { SearchComponent } from './header/search/search.component';
-import { SortingComponent } from './header/sorting/sorting.component';
+import { SortingComponent } from './sorting/sorting.component';
 import { SettingsButtonComponent } from './header/settings-button/settings-button.component';
+import { BorderDirective } from './directives/border-color.directive';
+import { LogoComponent } from './header/logo/logo.component';
+import { SortDateComponent } from './sorting/sort-date/sort-date.component';
+import { SortViewComponent } from './sorting/sort-view/sort-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Header,
+    HeaderComponent,
     AuthComponent,
     SearchComponent,
-    SortingComponent, 
-    ResultsComponent, 
+    SortingComponent,
+    ResultsComponent,
     Card,
-    SettingsButtonComponent
+    SettingsButtonComponent,
+    BorderDirective,
+    LogoComponent,
+    SortDateComponent,
+    SortViewComponent
   ],
   imports: [
     HttpClientModule,

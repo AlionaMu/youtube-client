@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ResultItem } from '../models/result-item.model';
 import { SearchItem } from '../../models/search-item.model';
 
 @Component({
@@ -8,8 +7,9 @@ import { SearchItem } from '../../models/search-item.model';
   styleUrls: ['./card.component.scss']
 })
 export class Card implements OnInit {
-  // @Input() video?: ResultItem | undefined;
   @Input() video: SearchItem | undefined;
+
+ // public appBorderColor: string = 'violet';
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-<div class="card__wrapper" *ngIf="video">
+<div class="card__wrapper" *ngIf="video" [appBorderColor]="video.snippet.publishedAt">
   <img [src]="video?.snippet?.thumbnails?.high?.url" 
 alt="youtube-video" width="100%">
   <div class="search-statistics">

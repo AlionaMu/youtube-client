@@ -5,16 +5,11 @@ import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
     templateUrl: 'header.component.html',
     styleUrls: ['header.component.scss']
 })
-export class Header implements OnInit {
+export class HeaderComponent {
 
     @Output() openSorting: EventEmitter<boolean> = new EventEmitter();
 
     public isSorting: boolean = false;
-
-
-    ngOnInit(): void {
-      
-    }
 
     showSorting(): void {
         this.isSorting ? this.isSorting = false : this.isSorting = true;
