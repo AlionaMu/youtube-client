@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sort-input',
   templateUrl: './sort-input.component.html',
   styleUrls: ['./sort-input.component.scss']
 })
-export class SortInputComponent implements OnInit {
+export class SortInputComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

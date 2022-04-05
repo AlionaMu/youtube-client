@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sort-view',
   templateUrl: './sort-view.component.html',
   styleUrls: ['./sort-view.component.scss']
 })
-export class SortViewComponent implements OnInit {
+export class SortViewComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

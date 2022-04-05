@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ResultsComponent } from './results/results.component';
-import { Card } from './results/card/card.component';
+import { CardComponent } from './results/card/card.component';
 import { AuthComponent } from './header/auth/auth.component';
 import { SearchComponent } from './header/search/search.component';
 import { SortingComponent } from './sorting/sorting.component';
@@ -25,7 +25,7 @@ import { SortViewComponent } from './sorting/sort-view/sort-view.component';
     SearchComponent,
     SortingComponent,
     ResultsComponent,
-    Card,
+    CardComponent,
     SettingsButtonComponent,
     BorderDirective,
     LogoComponent,

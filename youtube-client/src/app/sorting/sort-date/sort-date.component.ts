@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sort-date',
   templateUrl: './sort-date.component.html',
   styleUrls: ['./sort-date.component.scss']
 })
-export class SortDateComponent implements OnInit {
+export class SortDateComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

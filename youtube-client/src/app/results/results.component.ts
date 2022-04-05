@@ -6,14 +6,14 @@ import { youtubeResponse } from './../mocks/response';
 const videos: Array<SearchItem> = youtubeResponse.items;
 
 @Component({
-  selector: 'results',
+  selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
   @Input() isButtonSearchOn?: boolean;
   videos: SearchItem[] = [];
-  
+
   constructor(private searchService: SearchService) {
   }
 

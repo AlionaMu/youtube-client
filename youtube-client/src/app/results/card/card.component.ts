@@ -1,19 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SearchItem } from '../../models/search-item.model';
 
 @Component({
-  selector: 'card',
+  selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class Card implements OnInit {
+export class CardComponent {
   @Input() video: SearchItem | undefined;
 
- // public appBorderColor: string = 'violet';
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
