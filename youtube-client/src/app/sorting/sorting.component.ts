@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-sorting',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sorting.component.scss']
 })
 export class SortingComponent {
+  @Output() public textValue: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
+
+  getValue(userInput: string) {
+    this.textValue.emit(userInput);
+  }
 }

@@ -1,7 +1,9 @@
+@import '../styles/variables.scss';
+
 .sorting__wrapper {
   display: flex;
   justify-content: center;
-  background-color: #E5E5E5;
+  background-color: $bg-color;
   padding: 5px 10vw 20px;
   margin: 0 20px;
 }
@@ -15,21 +17,10 @@
   background: none;
   outline: none;
   border: none;
-  color: blue;
+  color: $header-button-color;
   text-decoration: underline;
   font-size: 14px;
   &:hover {
     cursor: pointer;
   }
-}
-
-#criteria-input {
-  border: none;
-  outline: none;
-}
-
-.criteria-input {
-  font-size: 14px;
-  color: blue;
-  margin: 0 10px;
 }

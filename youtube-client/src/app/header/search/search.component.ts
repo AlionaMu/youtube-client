@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchComponent {
   @Output() public submitInput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  title = 'search';
 
   public submitForm(action: boolean): void {
     this.submitInput.emit(action);

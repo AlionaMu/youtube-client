@@ -1,1 +1,4 @@
-<p>sort-input works!</p>
+<div>
+  <label class="criteria-input" for="criteria-input">by word or sentence</label>
+  <input id="criteria-input" type="text" (keyup)="searchSubmit()" (input)="getInputValue($event)">
+</div>

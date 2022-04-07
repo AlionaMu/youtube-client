@@ -15,6 +15,8 @@ import { BorderDirective } from './directives/border-color.directive';
 import { LogoComponent } from './header/logo/logo.component';
 import { SortDateComponent } from './sorting/sort-date/sort-date.component';
 import { SortViewComponent } from './sorting/sort-view/sort-view.component';
+import { SortInputComponent } from './sorting/sort-input/sort-input.component';
+import { WordSortPipe } from './pipes/input-sort.pipe';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { SortViewComponent } from './sorting/sort-view/sort-view.component';
     BorderDirective,
     LogoComponent,
     SortDateComponent,
-    SortViewComponent
+    SortViewComponent,
+    SortInputComponent,
+    WordSortPipe
   ],
   imports: [
     HttpClientModule,

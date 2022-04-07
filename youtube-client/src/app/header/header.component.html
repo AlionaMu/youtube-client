@@ -3,7 +3,7 @@
     <div class="header__search-container">
       <app-logo></app-logo>
       <app-search class="header__search" (submitInput)="submitForm(true)"></app-search>
-      <app-settings-button class="header__settings-button" (click)="toggleSorting()"></app-settings-button>
+      <app-settings-button (click)="toggleSorting()"></app-settings-button>
     </div>
     <app-auth></app-auth>
   </div>
