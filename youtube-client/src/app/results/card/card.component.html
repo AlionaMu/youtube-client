@@ -1,1 +1,16 @@
-<p>card works!</p>
+<div class="card__wrapper" *ngIf="video" [appBorderColor]="video.snippet.publishedAt">
+  <img [src]="video?.snippet?.thumbnails?.high?.url" 
+alt="youtube-video" width="100%">
+  <div class="search-statistics">
+    <div class="views-icon search__icon"></div>
+    <span class="search-statistics__span">{{video?.statistics?.viewCount}}</span>
+    <div class="likes-icon search__icon"></div>
+    <span class="search-statistics__span">{{video?.statistics?.likeCount}}</span>
+    <div class="dislikes-icon search__icon"></div>
+    <span class="search-statistics__span">{{video?.statistics?.dislikeCount}}</span>
+    <div class="comments-icon search__icon"></div>
+    <span class="search-statistics__span">{{video?.statistics?.commentCount}}</span>
+  </div>
+  <h4 class="item-title">{{video?.snippet?.title}}</h4>
+  <button class="more-button">more...</button>
+</div>

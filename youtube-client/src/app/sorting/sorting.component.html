@@ -1,0 +1,6 @@
+<div class="sorting__wrapper">
+  <span class="sorting__span">sorting by:</span>
+  <button class="sorting__button" (click)="dateSort($event)">date</button>
+  <button class="sorting__button" (click)="viewSort($event)">count of views</button>
+  <app-sort-input (getValue)="getValue($event)"></app-sort-input>
+</div>

@@ -1,1 +1,4 @@
-<p>results works!</p>
+<div class="results__wrapper">
+  <app-card *ngFor="let video of (videos | wordSort: userInput | dateSort: dateSort | viewSort: viewSort); index as i" [video]="video">
+  </app-card>
+</div>
