@@ -13,6 +13,7 @@ export class ResultsComponent implements OnInit {
   @Input() isButtonSearchOn?: boolean;
   @Input() userInput: string;
   @Input() dateSort: boolean;
+  @Input() viewSort: boolean;
   videos: SearchItem[] = [];
 
   ngOnInit(): void {

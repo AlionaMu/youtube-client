@@ -13,10 +13,15 @@ export class AppComponent {
   public searchText: string;
   public userInput: string;
   public dateSort: boolean;
+  public viewSort: boolean;
 
 
   public dateSorting(...args: boolean[]) {
     this.dateSort = args[0];
+  }
+
+  public viewSorting(...args: boolean[]) {
+    this.viewSort = args[0];
   }
 
   public openResults(): void {
