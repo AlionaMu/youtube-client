@@ -17,6 +17,7 @@ import { SortDateComponent } from './sorting/sort-date/sort-date.component';
 import { SortViewComponent } from './sorting/sort-view/sort-view.component';
 import { SortInputComponent } from './sorting/sort-input/sort-input.component';
 import { WordSortPipe } from './pipes/input-sort.pipe';
+import { DateSortPipe } from './pipes/date-sort.pipe';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { WordSortPipe } from './pipes/input-sort.pipe';
     SortDateComponent,
     SortViewComponent,
     SortInputComponent,
-    WordSortPipe
+    WordSortPipe,
+    DateSortPipe
   ],
   imports: [
     HttpClientModule,

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -12,7 +12,12 @@ export class AppComponent {
   public isSortingOpen: boolean = false;
   public searchText: string;
   public userInput: string;
+  public dateSort: boolean;
 
+
+  public dateSorting(...args: boolean[]) {
+    this.dateSort = args[0];
+  }
 
   public openResults(): void {
     this.hasResponse = true;

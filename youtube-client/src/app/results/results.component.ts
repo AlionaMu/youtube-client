@@ -12,6 +12,7 @@ const videos: Array<SearchItem> = youtubeResponse.items;
 export class ResultsComponent implements OnInit {
   @Input() isButtonSearchOn?: boolean;
   @Input() userInput: string;
+  @Input() dateSort: boolean;
   videos: SearchItem[] = [];
 
   ngOnInit(): void {
