@@ -4,21 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ResultsComponent } from './results/results.component';
-import { CardComponent } from './results/card/card.component';
-import { AuthComponent } from './header/auth/auth.component';
-import { SearchComponent } from './header/search/search.component';
-import { SortingComponent } from './sorting/sorting.component';
-import { SettingsButtonComponent } from './header/settings-button/settings-button.component';
-import { BorderDirective } from './directives/border-color.directive';
-import { LogoComponent } from './header/logo/logo.component';
-import { SortDateComponent } from './sorting/sort-date/sort-date.component';
-import { SortViewComponent } from './sorting/sort-view/sort-view.component';
-import { SortInputComponent } from './sorting/sort-input/sort-input.component';
-import { WordSortPipe } from './pipes/input-sort.pipe';
-import { DateSortPipe } from './pipes/date-sort.pipe';
-import { ViewSortPipe } from './pipes/view-sort.pipe';
+import { HeaderComponent } from './core/components/header/header.component';
+import { ResultsComponent } from './youtube/components/results/results.component';
+import { CardComponent } from './youtube/components/results/card/card.component';
+import { AuthComponent } from './core/components/header/auth/auth.component';
+import { SearchComponent } from './core/components/header/search/search.component';
+import { SortingComponent } from './core/components/sorting/sorting.component';
+import { SettingsButtonComponent } from './core/components/header/settings-button/settings-button.component';
+import { BorderDirective } from './youtube/directives/border-color.directive';
+import { LogoComponent } from './core/components/header/logo/logo.component';
+import { SortDateComponent } from './core/components/sorting/sort-date/sort-date.component';
+import { SortViewComponent } from './core/components/sorting/sort-view/sort-view.component';
+import { SortInputComponent } from './core/components/sorting/sort-input/sort-input.component';
+import { WordSortPipe } from './core/pipes/input-sort.pipe';
+import { DateSortPipe } from './core/pipes/date-sort.pipe';
+import { ViewSortPipe } from './core/pipes/view-sort.pipe';
 
 
 @NgModule({

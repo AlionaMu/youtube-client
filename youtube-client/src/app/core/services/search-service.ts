@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { SearchResponse } from '../models/search-response.model';
+import { SearchResponse } from '../../models/search-response.model';
 
 @Injectable({providedIn: 'root',})
 export class SearchService {
- 
+
   constructor(private http: HttpClient) { }
 
   searchRequest() {
