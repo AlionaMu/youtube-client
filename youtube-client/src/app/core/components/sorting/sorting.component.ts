@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { GlobalService } from '../../services/global-service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class SortingComponent {
   public dateCounter: number = 0;
   public viewCounter: number = 0;
 
-  constructor() { }
+  constructor(private _globalService: GlobalService) { }
 
   public getValue(userInput: string) {
     this.textValue.emit(userInput);

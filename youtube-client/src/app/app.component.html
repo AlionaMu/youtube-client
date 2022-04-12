@@ -1,5 +1,4 @@
-  <app-header (showSorting)="showSorting($event)" (openResults)="openResults()"></app-header>
-  <app-sorting *ngIf="isSortingOpen" (textValue)="textValue($event)" (dateSorting)="dateSorting($event)" (viewSorting)="viewSorting($event)"></app-sorting>
-  <!--<app-results *ngIf="hasResponse" [userInput]="userInput" [dateSort]="dateSort" [viewSort]="viewSort"></app-results>
-  -->
+  <app-header></app-header>
+  <!--<app-header (showSorting)="showSorting($event)" (openResults)="openResults()"></app-header> -->
+  <app-sorting *ngIf="this.globalService.isSortingOpen" (textValue)="textValue($event)" (dateSorting)="dateSorting($event)" (viewSorting)="viewSorting($event)"></app-sorting>
   <router-outlet></router-outlet>

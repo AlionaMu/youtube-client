@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from './core/services/global-service';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent {
   public dateSort: boolean;
   public viewSort: boolean;
 
+  constructor(public globalService: GlobalService) { }
 
   public dateSorting(...args: boolean[]) {
     this.dateSort = args[0];

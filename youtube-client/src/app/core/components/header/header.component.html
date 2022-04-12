@@ -2,9 +2,10 @@
   <div class="header__visible">
     <div class="header__search-container">
       <app-logo></app-logo>
-      <app-search class="header__search" (submitInput)="submitForm(true)"></app-search>
+      <app-search class="header__search" (submitInput)="submitForm(true)" (submit)="submitForm(true)"></app-search>
       <app-settings-button (click)="toggleSorting()"></app-settings-button>
     </div>
     <app-auth></app-auth>
   </div>
 </header>
+<!--(showSorting)="showSorting($event)" (openResults)="openResults()"-->

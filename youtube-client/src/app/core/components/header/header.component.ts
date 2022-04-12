@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { GlobalService } from "../../services/global-service";
 
 @Component({
     selector: 'app-header',
@@ -6,21 +7,27 @@ import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
     styleUrls: ['header.component.scss']
 })
 export class HeaderComponent {
-  @Output() showSorting: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() openResults: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //@Output() showSorting: EventEmitter<boolean> = new EventEmitter<boolean>();
+  //@Output() openResults: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  public isSortingOpen: boolean = false;
+  constructor(private _globalService: GlobalService) { }
 
   submitForm(value: boolean) {
-    this.openResults.emit(value);
+    //this.openResults.emit(value);
+    this._globalService.openResults()
   }
 
   toggleSorting(): void {
+    this._globalService.toggleSorting();
+  }
+
+  /*toggleSorting(): void {
     this.isSortingOpen ? this.isSortingOpen = false : this.isSortingOpen = true;
     if (this.isSortingOpen) {
       this.showSorting.emit(true);
     } else {
       this.showSorting.emit(false);
     }
-  }
+    console.log('check toggle')
+  }*/
 }

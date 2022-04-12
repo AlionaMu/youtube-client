@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YoutubeService } from '../../services/youtube-service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
+  constructor(public youtubeService: YoutubeService) { }
+    ngOnInit(): void {
+      console.log(this.youtubeService)
+    }
 
 }
