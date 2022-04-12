@@ -9,8 +9,8 @@ import { GlobalService } from './core/services/global-service';
 })
 export class AppComponent {
   title = 'youtube-client';
-  public hasResponse: boolean = false;
-  public isSortingOpen: boolean = false;
+  //public hasResponse: boolean = false;
+  //public isSortingOpen: boolean = false;
   public searchText: string;
   public userInput: string;
   public dateSort: boolean;
@@ -26,13 +26,13 @@ export class AppComponent {
     this.viewSort = args[0];
   }
 
-  public openResults(): void {
+  /*public openResults(): void {
     this.hasResponse = true;
   }
 
   public showSorting(isOpen: boolean): void {
     isOpen ? this.isSortingOpen = true : this.isSortingOpen = false;
-  }
+  }*/
 
   public textSearch(...args: string[]): void {
     this.searchText = args[0];

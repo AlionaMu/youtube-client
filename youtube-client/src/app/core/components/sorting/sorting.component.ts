@@ -9,13 +9,13 @@ import { GlobalService } from '../../services/global-service';
 })
 export class SortingComponent {
   @Output() public textValue: EventEmitter<string> = new EventEmitter();
-  @Output() public dateSorting: EventEmitter<boolean> = new EventEmitter();
-  @Output() public viewSorting: EventEmitter<boolean> = new EventEmitter();
+  //@Output() public dateSorting: EventEmitter<boolean> = new EventEmitter();
+ // @Output() public viewSorting: EventEmitter<boolean> = new EventEmitter();
 
   public dateCounter: number = 0;
   public viewCounter: number = 0;
 
-  constructor(private _globalService: GlobalService) { }
+  constructor(public globalService: GlobalService) { }
 
   public getValue(userInput: string) {
     this.textValue.emit(userInput);
@@ -26,9 +26,9 @@ export class SortingComponent {
     this.dateCounter++;
     this.viewCounter = 0;
     if (this.dateCounter % 2 !== 0) {
-      this.dateSorting.emit(true);
+      this.globalService.dateSort = true;
     } else {
-      this.dateSorting.emit(false);
+      this.globalService.dateSort = false;
     }
   }
 
@@ -37,9 +37,9 @@ export class SortingComponent {
     this.viewCounter++;
     this.dateCounter = 0;
     if (this.viewCounter % 2 !== 0) {
-      this.viewSorting.emit(true);
+      this.globalService.viewSort = true;
     } else {
-      this.viewSorting.emit(false);
+      this.globalService.viewSort = false;
     }
   }
 }

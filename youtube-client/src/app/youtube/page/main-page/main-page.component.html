@@ -1,1 +1,6 @@
-<p>main-page works!</p>
+<app-results
+  *ngIf="this.globalService.openResults"
+  [userInput]="this.globalService.userInput"
+  [dateSort]="this.globalService.dateSort"
+  [viewSort]="this.globalService.viewSort">
+</app-results>

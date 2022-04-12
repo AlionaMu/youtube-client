@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YoutubeService } from '../../services/youtube-service';
+import { GlobalService } from 'src/app/core/services/global-service';
 
 @Component({
   selector: 'app-main-page',
@@ -8,9 +8,8 @@ import { YoutubeService } from '../../services/youtube-service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public youtubeService: YoutubeService) { }
+  constructor(public globalService: GlobalService) { }
     ngOnInit(): void {
-      console.log(this.youtubeService)
+      console.log(this.globalService)
     }
-
 }

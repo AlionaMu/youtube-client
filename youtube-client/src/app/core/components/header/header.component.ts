@@ -10,24 +10,14 @@ export class HeaderComponent {
   //@Output() showSorting: EventEmitter<boolean> = new EventEmitter<boolean>();
   //@Output() openResults: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private _globalService: GlobalService) { }
+  constructor(public globalService: GlobalService) { }
 
   submitForm(value: boolean) {
     //this.openResults.emit(value);
-    this._globalService.openResults()
+    this.globalService.openResults()
   }
 
   toggleSorting(): void {
-    this._globalService.toggleSorting();
+    this.globalService.toggleSorting();
   }
-
-  /*toggleSorting(): void {
-    this.isSortingOpen ? this.isSortingOpen = false : this.isSortingOpen = true;
-    if (this.isSortingOpen) {
-      this.showSorting.emit(true);
-    } else {
-      this.showSorting.emit(false);
-    }
-    console.log('check toggle')
-  }*/
 }
