@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -7,11 +7,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  @Output() public submitInput: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   title = 'search';
-
-  public submitForm(action: boolean): void {
-    this.submitInput.emit(action);
-  }
 }

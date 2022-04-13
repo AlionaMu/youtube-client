@@ -1,5 +1,5 @@
 <app-results
-  *ngIf="this.globalService.openResults"
+  *ngIf="this.globalService.isResultsOpen"
   [userInput]="this.globalService.userInput"
   [dateSort]="this.globalService.dateSort"
   [viewSort]="this.globalService.viewSort">

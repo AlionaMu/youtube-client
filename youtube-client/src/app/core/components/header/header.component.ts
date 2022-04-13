@@ -13,4 +13,8 @@ export class HeaderComponent {
   toggleSorting(): void {
     this.globalService.toggleSorting();
   }
+
+  openResultsPanel(): void {
+    this.globalService.openResults();
+  }
 }
