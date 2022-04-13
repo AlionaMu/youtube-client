@@ -1,0 +1,13 @@
+@import '../../../shared/styles/variables.scss';
+
+.not-found__button {
+  color: $white-color;
+  //background-color: $button-color;
+  background: url('../../../../assets/404.svg');
+  box-shadow: 6px 2px 10px $button-color;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+}

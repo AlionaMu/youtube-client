@@ -1,5 +1,5 @@
 <div class="card__wrapper" *ngIf="video" [appBorderColor]="video.snippet.publishedAt">
-  <img [src]="video?.snippet?.thumbnails?.high?.url" 
+  <img [src]="video?.snippet?.thumbnails?.high?.url"
 alt="youtube-video" width="100%">
   <div class="search-statistics">
     <div class="views-icon search__icon"></div>
@@ -12,5 +12,5 @@ alt="youtube-video" width="100%">
     <span class="search-statistics__span">{{video?.statistics?.commentCount}}</span>
   </div>
   <h4 class="item-title">{{video?.snippet?.title}}</h4>
-  <button class="more-button">more...</button>
+  <button class="more-button" (click)="setId(video.id)">more...</button>
 </div>

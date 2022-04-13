@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { YoutubeService } from 'src/app/youtube/services/youtube-service';
 import { SearchItem } from '../../../../core/models/search-item.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-card',
@@ -9,5 +12,10 @@ import { SearchItem } from '../../../../core/models/search-item.model';
 export class CardComponent {
   @Input() video: SearchItem | undefined;
 
-  constructor() { }
+  constructor(public youtubeService: YoutubeService, private _router: Router) { }
+
+  setId(id: string) {
+    this.youtubeService.videoId = id;
+    this._router.navigate(['video', id]);
+  }
 }

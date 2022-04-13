@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-//import { SearchItem } from '../../../core/models/search-item.model';
-//import { youtubeResponse } from '../../../shared/mocks/response';
+import { Component, Input } from '@angular/core';
 import { GlobalService } from 'src/app/core/services/global-service';
 
 //const videos: Array<SearchItem> = youtubeResponse.items;

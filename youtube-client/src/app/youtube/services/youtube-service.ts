@@ -11,4 +11,6 @@ export class YoutubeService {
   dateSort: boolean;
   viewSort: boolean;
 
+  videoId: string;
+
 }
