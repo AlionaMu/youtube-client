@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { GlobalService } from '../../services/global-service';
 
 
@@ -8,17 +8,13 @@ import { GlobalService } from '../../services/global-service';
   styleUrls: ['./sorting.component.scss']
 })
 export class SortingComponent {
-  @Output() public textValue: EventEmitter<string> = new EventEmitter();
-  //@Output() public dateSorting: EventEmitter<boolean> = new EventEmitter();
- // @Output() public viewSorting: EventEmitter<boolean> = new EventEmitter();
-
   public dateCounter: number = 0;
   public viewCounter: number = 0;
 
   constructor(public globalService: GlobalService) { }
 
   public getValue(userInput: string) {
-    this.textValue.emit(userInput);
+    this.globalService.userInput = userInput;
   }
 
   public dateSort($event: MouseEvent) {
