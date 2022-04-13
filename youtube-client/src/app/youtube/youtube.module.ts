@@ -6,6 +6,8 @@ import { MainPageComponent } from './page/main-page/main-page.component';
 import { DetailedInfoPageComponent } from './page/detailed-info-page/detailed-info-page.component';
 import { NotFoundPageComponent } from './page/not-found-page/not-found-page.component';
 
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
 import { ResultsComponent } from './components/results/results.component';
 import { CardComponent } from './components/results/card/card.component';
 import { BorderDirective } from './directives/border-color.directive';
@@ -19,6 +21,8 @@ import { ViewSortPipe } from './pipes/view-sort.pipe';
     MainPageComponent,
     DetailedInfoPageComponent,
     NotFoundPageComponent,
+
+    NotFoundComponent,
 
     ResultsComponent,
     CardComponent,

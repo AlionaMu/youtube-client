@@ -1,13 +1,23 @@
 @import '../../../shared/styles/variables.scss';
 
+.not-found__wrapper {
+  display: flex;
+  margin-top: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
 .not-found__button {
-  color: $white-color;
-  //background-color: $button-color;
-  background: url('../../../../assets/404.svg');
-  box-shadow: 6px 2px 10px $button-color;
+  width: 55px;
+  height: 50px;
+  background: no-repeat url('../../../../assets/404.svg');
   border: none;
   border-radius: 5px;
   &:hover {
     cursor: pointer;
   }
+}
+
+.not-found__text {
+  padding-left: 10px;
 }
