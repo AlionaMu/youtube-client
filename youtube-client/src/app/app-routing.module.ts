@@ -4,13 +4,12 @@ import { DetailedInfoPageComponent } from './youtube/page/detailed-info-page/det
 import { MainPageComponent } from './youtube/page/main-page/main-page.component';
 import { NotFoundPageComponent } from './youtube/page/not-found-page/not-found-page.component';
 
-import { DetailedInfoComponent } from './youtube/components/detailed-info/detailed-info.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: DetailedInfoPageComponent/*MainPageComponent*/ },
-  { path: '**', component: NotFoundPageComponent },
-  { path: 'video', component: DetailedInfoPageComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: MainPageComponent },
+  { path: 'video', component: DetailedInfoPageComponent },
+  { path: '**', component: NotFoundPageComponent }
 ];
 
 @NgModule({
