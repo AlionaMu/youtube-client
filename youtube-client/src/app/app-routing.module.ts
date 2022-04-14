@@ -8,7 +8,7 @@ import { NotFoundPageComponent } from './youtube/page/not-found-page/not-found-p
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: MainPageComponent },
-  { path: 'video', component: DetailedInfoPageComponent },
+  { path: 'video/:id', component: DetailedInfoPageComponent },
   { path: '**', component: NotFoundPageComponent }
 ];
 

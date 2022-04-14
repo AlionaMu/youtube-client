@@ -6,12 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './detailed-info-page.component.html',
   styleUrls: ['./detailed-info-page.component.scss']
 })
-export class DetailedInfoPageComponent implements OnInit {
+export class DetailedInfoPageComponent {
 
   constructor(public route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    console.log(this.route.snapshot.params['id'])
-  }
-
 }

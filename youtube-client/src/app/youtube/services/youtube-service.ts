@@ -16,8 +16,10 @@ export class YoutubeService {
   video: SearchItem;
 
   public findVideo(): void {
-    this.video = this.videos[2];
-    console.log(this.video, 'this.video')
+    for (let i: number = 0; i < this.videos.length; i++) {
+      if (this.videos[i].id === this.videoId) {
+        this.video = this.videos[i];
+      }
+    }
   }
-
 }

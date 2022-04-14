@@ -1,5 +1,5 @@
 <div class="detailed-info__wrapper">
-  <button class="detailed-info__back-button"><</button>
+  <button class="detailed-info__back-button" (click)="goToPreviousPage()"><</button>
   <div class="detailed-info__container">
     <img [src]="video.snippet.thumbnails.high.url" alt="detailed-info" class="detaile-info__img">
     <div class="detailed-info__info" [appBorderColor]="video.snippet.publishedAt">
