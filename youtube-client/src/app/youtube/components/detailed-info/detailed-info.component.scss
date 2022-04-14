@@ -1,0 +1,98 @@
+@import '../../../shared/styles/variables.scss';
+
+.detailed-info__wrapper {
+  display: flex;
+  margin: 30px 20px 0;
+}
+
+.detailed-info__back-button {
+  min-width: 32px;
+  height: 32px;
+  background-color: $button-color;
+  border: none;
+  color: $white-color;
+  font-size: 20px;
+  border-radius: 5px 0px 0px 5px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}
+
+.detailed-info__container {
+  display: flex;
+  height: 460px;
+}
+
+.detailed-info__img {
+  min-width: none;
+}
+
+.detailed-info__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $card-bg-color;
+  padding: 35px;
+}
+
+.info-content {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.detailed-info__item-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.date {
+  align-self: end;
+  font-size: 10px;
+  font-weight: 400;
+  width: 200px;
+  color: $desc-font-color;
+}
+
+.description-title {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.description-text {
+  height: 180px;
+  width: 100%;
+  font-size: 12px;
+  overflow-y: hidden;
+  margin-bottom: 20px;
+  color: $desc-font-color;
+}
+
+.search-statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.search__icon {
+ width: 20px;
+ height: 13px;
+}
+
+.search-statistics__span {
+  font-size: 12px;
+}
+
+.views-icon {
+  background: center / contain no-repeat url('../../../../assets/views.png');
+}
+.likes-icon {
+  background: center / contain no-repeat url('../../../../assets/likes.png');
+}
+.dislikes-icon {
+  background: center / contain no-repeat url('../../../../assets/dislike.png');
+}
+.comments-icon {
+  background: center / contain no-repeat url('../../../../assets/comments.png');
+}

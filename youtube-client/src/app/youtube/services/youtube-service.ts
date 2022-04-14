@@ -7,10 +7,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class YoutubeService {
+  public videos: Array<SearchItem> = youtubeResponse.items;
   userInput: string;
   dateSort: boolean;
   viewSort: boolean;
 
   videoId: string;
+  video: SearchItem;
+
+  public findVideo(): void {
+    this.video = this.videos[2];
+    console.log(this.video, 'this.video')
+  }
 
 }

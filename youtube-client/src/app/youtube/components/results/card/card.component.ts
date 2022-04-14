@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class CardComponent {
   @Input() video: SearchItem | undefined;
 
-  constructor(public youtubeService: YoutubeService, private _router: Router) { }
+  constructor(public youtubeService: YoutubeService, public router: Router) { }
 
   setId(id: string) {
     this.youtubeService.videoId = id;
-    this._router.navigate(['video', id]);
+    this.router.navigate(['video']);
+    console.log(   this.youtubeService.videoId, 'you')
+
   }
 }

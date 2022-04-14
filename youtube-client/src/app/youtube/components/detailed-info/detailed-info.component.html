@@ -1,0 +1,26 @@
+<div class="detailed-info__wrapper">
+  <button class="detailed-info__back-button"><</button>
+  <div class="detailed-info__container">
+    <img [src]="video.snippet.thumbnails.high.url" alt="detailed-info" class="detaile-info__img">
+    <div class="detailed-info__info" [appBorderColor]="video.snippet.publishedAt">
+      <div class="info-content">
+        <h4 class="detailed-info__item-title">{{video.snippet.title}}</h4>
+        <p class="date">{{ video.snippet.publishedAt | date:'fullDate'  }}</p>
+      </div>
+      <div class="description-content">
+        <p class="description-title">Description:</p>
+        <div class="description-text">{{ video.snippet.description }}</div>
+      </div>
+      <div class="search-statistics">
+        <div class="views-icon search__icon"></div>
+        <span class="search-statistics__span">{{video.statistics.viewCount}}</span>
+        <div class="likes-icon search__icon"></div>
+        <span class="search-statistics__span">{{video?.statistics?.likeCount}}</span>
+        <div class="dislikes-icon search__icon"></div>
+        <span class="search-statistics__span">{{video?.statistics?.dislikeCount}}</span>
+        <div class="comments-icon search__icon"></div>
+        <span class="search-statistics__span">{{video?.statistics?.commentCount}}</span>
+      </div>
+    </div>
+  </div>
+</div>
