@@ -11,9 +11,8 @@ import { AuthComponent } from './core/components/header/auth/auth.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'auth',
-  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-  /*canActivate: [AuthGuard]*/},
-  { path: 'home', component: MainPageComponent, /*canActivate: [AuthGuard]*/ },
+  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'home', component: MainPageComponent, canActivate: [AuthGuard] },
   { path: 'video/:id', component: DetailedInfoPageComponent },
   { path: '**', component: NotFoundPageComponent }
 ];

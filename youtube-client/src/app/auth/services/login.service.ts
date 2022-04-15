@@ -6,8 +6,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-  public error: boolean = false;
-  public isAuthorized: boolean = false;
+  public loginInput: string;
+  public passwordInput: string;
 
-  constructor(private router: Router) {}
+  constructor() {}
+
+  public storageLogin = localStorage.getItem('login');
+  public storagePassword = localStorage.getItem('password');
+
+  saveToken(): void {
+    localStorage.setItem('login', this.loginInput);
+    localStorage.setItem('password', this.passwordInput);
+  }
+
+  isToken(): boolean {
+    if (this.storageLogin && this.storagePassword) {
+      return true;
+    } else { return false; }
+  }
 }
