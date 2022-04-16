@@ -1,15 +1,16 @@
 @import '../../../../shared/styles/mixins.scss';
+@import '../../../../shared/styles/variables.scss';
 
 .search__button {
-  background-color: #2F7FEE;
+  background-color: $button-color;
   border: none;
   padding: 5px 15px;
   border-radius: 0px 4px 4px 0px;
-  color: #FFF;
-  box-shadow: 6px 2px 10px #2F7FEE;
+  color: $white-color;
+  box-shadow: 6px 2px 10px $button-color;
   &:hover {
     cursor: pointer;
-    background-color: rgb(83, 152, 248);
+    background-color: $button-hover-color;
   }
 }
 .search__input {
@@ -17,7 +18,7 @@
   min-width: 300px;
   border: none;
   outline: none;
-  background-color: #f0efef;
+  background-color: $input-color;
   @include small-tablet {
     min-width: 150px;
   }

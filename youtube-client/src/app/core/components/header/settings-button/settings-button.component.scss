@@ -1,12 +1,14 @@
+@import '../../../../shared/styles/variables.scss';
+
 .settings-button {
   display: block;
   width: 24px;
   height: 24px;
   outline: none;
-  background-color: #2F7FEE;
+  background-color: $button-color;
   padding: 1px;
   border-radius: 7px;
-  box-shadow: 2px 0px 4px 0px #2f80ed;
+  box-shadow: 2px 0px 4px 0px $shadow-color;
   &:hover {
     cursor: pointer;
     opacity: 0.9;

@@ -24,7 +24,7 @@
   &__container {
     display: flex;
     height: 460px;
-    box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.25);
+    box-shadow: 5px 5px 20px $info-bg-color;
     @include tablet {
       width: 500px;
       flex-direction: column;
