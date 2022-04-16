@@ -1,28 +1,27 @@
-.auth, .logout {
+.auth {
   display: flex;
   align-items: center;
   width: 120px;
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background: center / contain no-repeat url('../../../../../assets/auth.svg');
+    margin-left: 5px;
+  }
 }
 
-.auth__icon {
-  width: 24px;
-  height: 24px;
-  background: center / contain no-repeat url('../../../../../assets/auth.svg');
-  margin-left: 5px;
- /* &:hover {
+.logout {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  &:hover {
     cursor: pointer;
-    opacity: 0.9;
-  }*/
-}
-
-.logout:hover {
-  cursor: pointer;
-  opacity: 0.6;
-}
-
-.logout__icon {
-  width: 24px;
-  height: 24px;
-  background: center / contain no-repeat url('../../../../../assets/logout.svg');
-  margin-left: 5px;
+    opacity: 0.6;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background: center / contain no-repeat url('../../../../../assets/logout.svg');
+    margin-left: 5px;
+  }
 }

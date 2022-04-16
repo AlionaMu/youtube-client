@@ -16,13 +16,11 @@ export class LoginFormComponent {
 
   clickLoginInput(event: any): void {
     this.loginValue = event.target.value;
-    console.log(event.target.value)
     this.loginService.loginInput = event.target.value;
   }
 
   clickPasswordInput(event: any): void {
     this.passwordValue = event.target.value;
-    console.log(event)
     this.loginService.passwordInput = event.target.value;
   }
 

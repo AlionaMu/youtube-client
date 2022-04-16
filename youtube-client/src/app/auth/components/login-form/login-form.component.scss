@@ -1,38 +1,32 @@
 //@import url('../../../shared/styles/variables.scss');
 
-.login__wrapper {
+.login {
   width: 350px;
   height: 250px;
   padding: 20px 20px;
-  background-color: #F2F2F2;  // $login-bg-color
-}
-
-.login__form {
-  display: flex;
-  flex-direction: column;
-  & > * {
-    margin-top: 8px;
+  background-color: #F2F2F2;  // $login-bg-color;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    & > * {
+      margin-top: 8px;
+    }
   }
-}
-
-.login__title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.login__label {
-  font-size: 12px;
-}
-
-.login__input {
-  height: 37px;
-  background-color: #E0E0E0;  // $login-input-color
-  border: none;
-  padding: 8px;
-  font-size: 10px;
-}
-
-.login__button {
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__label {
+    font-size: 12px;
+  }
+  &__input {
+    height: 37px;
+    background-color: #E0E0E0;  // $login-input-color
+    border: none;
+    padding: 8px;
+    font-size: 10px;
+  }
+  &__button {
   width: 124px;
   height: 30px;
   background-color: #2F7FEE;
@@ -43,5 +37,6 @@
   &:hover {
     cursor: pointer;
     background-color: rgb(83, 152, 248);
+  }
   }
 }

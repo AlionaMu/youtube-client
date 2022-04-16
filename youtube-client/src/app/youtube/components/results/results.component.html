@@ -1,4 +1,4 @@
-<div class="results__wrapper">
+<div class="results">
   <app-card *ngFor="let video of (this.globalService.videos | wordSort: this.globalService.userInput | dateSort: this.globalService.dateSort | viewSort: this.globalService.viewSort); index as i" [video]="video">
   </app-card>
 </div>

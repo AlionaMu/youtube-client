@@ -8,6 +8,5 @@ import { GlobalService } from './core/services/global-service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'youtube-client';
   constructor(public globalService: GlobalService) { }
 }

@@ -1,4 +1,4 @@
-.header__settings-button {
+.settings-button {
   display: block;
   width: 24px;
   height: 24px;
@@ -11,16 +11,15 @@
     cursor: pointer;
     opacity: 0.9;
   }
-}
-
-.header__settings-button-icon {
-  height: 24px;
-  width: 24px;
-  border: none;
-  background: url('../../../../../assets/search_settings.svg');
-  background-size: cover;
-  &:hover {
-    cursor: pointer;
-    opacity: 0.9;
+  &__icon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background: url('../../../../../assets/search_settings.svg');
+    background-size: cover;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
   }
 }

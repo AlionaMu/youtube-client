@@ -1,23 +1,21 @@
 @import '../../../shared/styles/variables.scss';
 
-.not-found__wrapper {
+.not-found {
   display: flex;
   margin-top: 200px;
   justify-content: center;
   align-items: center;
-}
-
-.not-found__button {
-  width: 55px;
-  height: 50px;
-  background: no-repeat url('../../../../assets/404.svg');
-  border: none;
-  border-radius: 5px;
-  &:hover {
-    cursor: pointer;
+  &__button {
+    width: 55px;
+    height: 50px;
+    background: no-repeat url('../../../../assets/404.svg');
+    border: none;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
   }
-}
-
-.not-found__text {
-  padding-left: 10px;
+  &__text {
+    padding-left: 10px;
+  }
 }
