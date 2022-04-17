@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LogoComponent {
 
-  constructor(private router: Router) { }
+  constructor( private router: Router ) { }
 
   goHome() {
     this.router.navigate(['']);
