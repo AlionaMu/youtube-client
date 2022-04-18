@@ -1,0 +1,25 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+
+* {
+    margin: 5px;
+}
+
+.header {
+  background-color: $bg-color;
+  padding: 5px 10vw;
+  margin: 0;
+  &__visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include smart {
+      flex-direction: column;
+    }
+  }
+  &__search-container {
+      display: flex;
+      margin-left: 30px;
+      align-items: center;
+  }
+}

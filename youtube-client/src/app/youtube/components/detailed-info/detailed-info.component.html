@@ -1,0 +1,26 @@
+<div class="detailed-info">
+  <button class="detailed-info__back-button" (click)="goToPreviousPage()"><</button>
+  <div class="detailed-info__container">
+    <img [src]="video.snippet.thumbnails.high.url" alt="detailed-info" class="detailed-info__img">
+    <div class="detailed-info__info" [appBorderColor]="video.snippet.publishedAt">
+      <div class="detailed-info__info-content">
+        <h4 class="detailed-info__item-title">{{video.snippet.title}}</h4>
+        <p class="detailed-info__date">{{ video.snippet.publishedAt | date:'fullDate' }}</p>
+      </div>
+      <div class="detailed-info__description-content">
+        <p class="detailed-info__description-title">Description:</p>
+        <div class="detailed-info__description-text">{{ video.snippet.description }}</div>
+      </div>
+      <div class="detailed-info__statistics">
+        <div class="detailed-info__views-icon detailed-info__statistics-icon"></div>
+        <span class="detailed-info__statistics-span">{{video.statistics.viewCount}}</span>
+        <div class="detailed-info__likes-icon detailed-info__statistics-icon"></div>
+        <span class="detailed-info__statistics-span">{{video.statistics.likeCount}}</span>
+        <div class="detailed-info__dislikes-icon detailed-info__statistics-icon"></div>
+        <span class="detailed-info__statistics-span">{{video.statistics.dislikeCount}}</span>
+        <div class="detailed-info__comments-icon detailed-info__statistics-icon"></div>
+        <span class="detailed-info__statistics-span">{{video.statistics.commentCount}}</span>
+      </div>
+    </div>
+  </div>
+</div>

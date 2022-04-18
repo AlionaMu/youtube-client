@@ -1,0 +1,97 @@
+@import '../../../shared/styles/variables.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.detailed-info {
+  display: flex;
+  justify-content: center;
+  margin: 30px 20px 10px;
+  @include tablet {
+    justify-content: center;
+  }
+  &__back-button {
+    min-width: 32px;
+    height: 32px;
+    background-color: $button-color;
+    border: none;
+    color: $white-color;
+    font-size: 20px;
+    border-radius: 5px 0px 0px 5px;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+  &__container {
+    display: flex;
+    height: 460px;
+    box-shadow: 5px 5px 20px $info-bg-color;
+    @include tablet {
+      width: 500px;
+      flex-direction: column;
+      box-shadow: none;
+    }
+  }
+  &__img {
+    min-width: none;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $card-bg-color;
+    padding: 35px;
+  }
+  &__item-title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__info-content {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__date {
+    align-self: end;
+    font-size: 10px;
+    font-weight: 400;
+    width: 200px;
+    color: $desc-font-color;
+  }
+  &__description-title {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__description-text {
+    height: 180px;
+    width: 100%;
+    font-size: 12px;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    color: $desc-font-color;
+  }
+  &__statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+  }
+  &__statistics-icon {
+    width: 20px;
+    height: 13px;
+   }
+  &__statistics-span {
+    font-size: 12px;
+  }
+  &__views-icon {
+    background: center / contain no-repeat url('../../../../assets/views.png');
+  }
+  &__likes-icon {
+    background: center / contain no-repeat url('../../../../assets/likes.png');
+  }
+  &__dislikes-icon {
+    background: center / contain no-repeat url('../../../../assets/dislike.png');
+  }
+  &__comments-icon {
+    background: center / contain no-repeat url('../../../../assets/comments.png');
+  }
+}

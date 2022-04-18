@@ -1,0 +1,10 @@
+<div class="login">
+  <h4 class="login__title">Login</h4>
+  <form action="#" class="login__form">
+    <label class="login__label" for="login-input">login</label>
+    <input id="login-input" placeholder="Your Name" class="login__input" type="text" (input)="clickLoginInput($event)">
+    <label class="login__label" for="login-input">password</label>
+    <input id="password-input" placeholder="Enter Password" class="login__input" type="text" (input)="clickPasswordInput($event)">
+    <button class="login__button" type="submit" (click)="submitForm()">Login</button>
+  </form>
+</div>
