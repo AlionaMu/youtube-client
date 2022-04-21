@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input() video: SearchItem | undefined;
+  @Input() public video: SearchItem | undefined;
 
-  constructor(public youtubeService: YoutubeService, public router: Router) { }
+  constructor(public youtubeService: YoutubeService, public router: Router ) { }
 
   setId(id: string) {
     this.youtubeService.videoId = id;
