@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent {
 
-  name = 'Your Name';
+  public name = 'Your Name';
 
   constructor(public loginService: LoginService, public router: Router) {}
 

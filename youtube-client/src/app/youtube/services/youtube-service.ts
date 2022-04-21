@@ -12,9 +12,9 @@ export class YoutubeService {
   public userInput: string;
   public dateSort: boolean;
   public viewSort: boolean;
-  videoId: string;
-  video: SearchItem;
-  videos: any;
+  public videoId: string;
+  public video: SearchItem;
+  public videos: any;
 
 
   constructor( public searchService: SearchService ) {}

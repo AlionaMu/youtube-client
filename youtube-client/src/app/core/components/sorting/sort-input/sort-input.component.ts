@@ -8,8 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SortInputComponent {
   @Output() getValue: EventEmitter<string> = new EventEmitter<string>();
+  public value = '';
 
-  value = '';
   constructor() { }
 
   getInputValue(event: any) {

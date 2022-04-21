@@ -13,8 +13,8 @@ export class ResultsComponent implements OnInit {
   @Input() userInput: string;
   @Input() dateSort: boolean;
   @Input() viewSort: boolean;
-  videos: any;
-  video: any
+  public videos: any;
+  public video: any
   public items: SearchItem[];
   //videos: SearchItem[] = [];
 
