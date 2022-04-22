@@ -22,7 +22,6 @@ export class ResultsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.searchService.data$.subscribe((data: any) => {
-      console.log(data)
       this.videos = data;
     })
 

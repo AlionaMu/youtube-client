@@ -12,18 +12,13 @@ import { SearchService } from 'src/app/core/services/search-service';
   styleUrls: ['./detailed-info.component.scss']
 })
 export class DetailedInfoComponent implements OnInit {
-  public video: any//SearchItem;
-  public id = this.youtubeService.videoId;
+  public video: SearchItem;
 
   constructor(public youtubeService: YoutubeService, public route: ActivatedRoute, public searchService: SearchService, private location: Location) { }
 
   public ngOnInit(): void {
     this.youtubeService.findVideo();
-    this.video =/* this.searchService.data$.subscribe((data: any) => {
-      console.log(data)
-
-    });*/this.youtubeService.video;
-    console.log(this.video)
+    this.video = this.youtubeService.video
   }
 
   public goToPreviousPage(): void {
