@@ -56,5 +56,8 @@
   }
   &__item-title {
     margin-top: 6px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-clamp: 2;
   }
 }

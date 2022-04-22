@@ -22,10 +22,15 @@ export class YoutubeService {
   public findVideo(): void {
    this.videos = this.searchService.data$.subscribe((data: SearchItem[] ) => {
      // this.items = data;
+     console.log(data)
     });
+    console.log(this.videos)
     for (let i: number = 0; i < this.videos.length; i++) {
+      console.log( this.videoId, this.videos[i].id.videoId)
       if (this.videos[i].id.videoId === this.videoId) {
+
         this.video = this.videos[i];
+        console.log(this.video)
       }
     }
   }

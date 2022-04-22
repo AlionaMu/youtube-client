@@ -25,5 +25,6 @@ export class ResultsComponent implements OnInit {
       console.log(data)
       this.videos = data;
     })
+
   }
 }

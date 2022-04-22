@@ -11,11 +11,11 @@ import { GlobalService } from './global-service';
 
 @Injectable({providedIn: 'root',})
 export class SearchService {
-  public data: any; //SearchItem[];
+  public data: SearchResponse;
   public items: SearchItem[];
   public headerInput: string;
   public data$: BehaviorSubject<SearchItem[]> = new BehaviorSubject(null);
-  private apiKey: string ='AIzaSyCAZUF47LG755Pfj-1limSEQOAZFGKgQkw';
+  private apiKey: string ='AIzaSyDHsHK5sktwG3T3OXXyU3kaCXEShcSWMNQ';
 
   constructor(private http: HttpClient, public globalService: GlobalService) { }
 
@@ -36,7 +36,8 @@ export class SearchService {
         let newData: SearchItem[] = oldData.map(item => {
           let newItem: SearchItem = item;
           let idItem: string = item.id.videoId;
-         newItem.statistics = statisticsItems.filter(statisticItem => idItem === statisticItem.id)[0].statistics;
+          newItem.statistics = statisticsItems.filter(statisticItem =>
+            idItem === statisticItem.id)[0].statistics;
           return newItem;
         });
         this.data$.next(newData);
