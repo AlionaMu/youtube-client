@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/core/services/search-service';
 import { SearchItem } from 'src/app/core/models/search-item.model';
+import { GlobalService } from 'src/app/core/services/global-service';
+import { debounceTime } from 'rxjs/operators';
 
 
 @Component({
@@ -16,14 +18,14 @@ export class ResultsComponent implements OnInit {
   public videos: any;
   public video: any
   public items: SearchItem[];
-  //videos: SearchItem[] = [];
 
-  constructor(public searchService: SearchService) { }
+  constructor(public searchService: SearchService, public globalService: GlobalService) { }
 
   public ngOnInit(): void {
-    this.searchService.data$.subscribe((data: any) => {
+    this.searchService.data$.pipe(
+      debounceTime(500)
+      ).subscribe((data: any) => {
       this.videos = data;
     })
-
   }
 }
