@@ -1,18 +1,26 @@
-import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthService {
   public loginInput: string;
   public passwordInput: string;
+  public logged: boolean;
 
   constructor() {}
 
   public storageLogin = localStorage.getItem('login');
   public storagePassword = localStorage.getItem('password');
+
+  getName(): string {
+    return localStorage.getItem('login');
+  }
+
+  logOut() {
+    this.logged = false;
+  }
 
   saveToken(): void {
     localStorage.setItem('login', this.loginInput);
@@ -21,7 +29,11 @@ export class LoginService {
 
   isToken(): boolean {
     if (this.storageLogin && this.storagePassword) {
+      this.logged = true;
       return true;
-    } else { return false; }
+    } else {
+      this.logged = false;
+      return false;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -12,20 +12,20 @@ export class LoginFormComponent {
   public loginValue: string;
   public passwordValue: string;
 
-  constructor(public loginService: LoginService, public router: Router) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   clickLoginInput(event: any): void {
     this.loginValue = event.target.value;
-    this.loginService.loginInput = event.target.value;
+    this.authService.loginInput = event.target.value;
   }
 
   clickPasswordInput(event: any): void {
     this.passwordValue = event.target.value;
-    this.loginService.passwordInput = event.target.value;
+    this.authService.passwordInput = event.target.value;
   }
 
   submitForm(): void {
-    this.loginService.saveToken();
+    this.authService.saveToken();
     this.router.navigateByUrl('/home');
   }
 }
