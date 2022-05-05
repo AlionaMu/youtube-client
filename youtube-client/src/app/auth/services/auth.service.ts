@@ -23,6 +23,7 @@ export class AuthService {
   }
 
   saveToken(): void {
+    console.log(this.loginInput, this.passwordInput)
     localStorage.setItem('login', this.loginInput);
     localStorage.setItem('password', this.passwordInput);
   }
