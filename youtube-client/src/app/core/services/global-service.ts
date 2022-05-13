@@ -20,6 +20,6 @@ export class GlobalService {
   }
 
   public toggleSorting() {
-    this.isSortingOpen ? this.isSortingOpen = false : this.isSortingOpen = true;
+    this.isSortingOpen = !this.isSortingOpen
   }
 }

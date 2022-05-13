@@ -5,17 +5,14 @@ import { SearchItem } from '../../core/models/search-item.model';
   name: 'dateSort'
 })
 export class DateSortPipe implements PipeTransform {
-  public transform(cards: SearchItem[], dateSort: boolean): SearchItem[] {
-    if (dateSort === true) {
-      return cards.sort((a, b) =>
-      new Date(b.snippet.publishedAt).getTime() -
-      new Date(a.snippet.publishedAt).getTime());
-    } else if (dateSort === false) {
-      return cards.sort((a, b) =>
-      new Date(a.snippet.publishedAt).getTime() -
-      new Date(b.snippet.publishedAt).getTime());
-    } else {
+  public transform(cards: SearchItem[], asc: boolean): SearchItem[] {
+
+    if (asc === undefined) {
       return cards;
+    } else {
+      return  cards.sort((a: SearchItem, b: SearchItem) => asc ?
+        new Date(b.snippet.publishedAt).getTime() - new Date(a.snippet.publishedAt).getTime() :
+        new Date(a.snippet.publishedAt).getTime() - new Date(b.snippet.publishedAt).getTime())
     }
   }
 }

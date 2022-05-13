@@ -5,14 +5,14 @@ import { SearchItem } from '../../core/models/search-item.model';
   name: 'viewSort'
 })
 export class ViewSortPipe implements PipeTransform {
-  public transform(cards: SearchItem[], viewSort: boolean): SearchItem[] {
-    switch (viewSort) {
-      case undefined:
-        return cards;
-      case true:
-        return cards.sort((a, b) => Number(b.statistics.viewCount) - Number(a.statistics.viewCount));
-      case false:
-        return cards.sort((a, b) => Number(a.statistics.viewCount) - Number(b.statistics.viewCount));
+  public transform(cards: SearchItem[], asc: boolean): SearchItem[] {
+
+    if (asc === undefined) {
+      return cards;
+    } else {
+    return cards?.sort((a: SearchItem, b: SearchItem) => asc
+      ? parseInt(b.statistics.viewCount) - parseInt(a.statistics.viewCount)
+      : parseInt(a.statistics.viewCount) - parseInt(b.statistics.viewCount))
     }
   }
 }

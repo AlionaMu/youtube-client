@@ -19,23 +19,13 @@ export class SortingComponent {
 
   public dateSort($event: MouseEvent) {
     $event.preventDefault();
-    this.dateCounter++;
     this.viewCounter = 0;
-    if (this.dateCounter % 2 !== 0) {
-      this.globalService.dateSort = true;
-    } else {
-      this.globalService.dateSort = false;
-    }
+    this.globalService.dateSort = ++this.dateCounter % 2 !== 0
   }
 
   public viewSort($event: MouseEvent) {
     $event.preventDefault();
-    this.viewCounter++;
     this.dateCounter = 0;
-    if (this.viewCounter % 2 !== 0) {
-      this.globalService.viewSort = true;
-    } else {
-      this.globalService.viewSort = false;
-    }
+    this.globalService.viewSort = ++this.viewCounter % 2 !== 0
   }
 }

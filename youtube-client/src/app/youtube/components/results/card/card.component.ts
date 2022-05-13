@@ -14,7 +14,7 @@ export class CardComponent {
 
   constructor(public youtubeService: YoutubeService, public router: Router ) { }
 
-  setId(id: string) {
+  public setId(id: string): void {
     this.youtubeService.videoId = id;
     this.router.navigate(['/video', id]);
   }

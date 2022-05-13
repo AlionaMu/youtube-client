@@ -9,7 +9,6 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  public logName: string;
 
   constructor( public router: Router, public authService: AuthService ) {}
 

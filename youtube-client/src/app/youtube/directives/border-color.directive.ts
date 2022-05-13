@@ -5,8 +5,7 @@ import { Colors } from '../../shared/entities/colors';
   selector: '[appBorderColor]'
 })
 export class BorderDirective implements OnInit {
-  @Input('appBorderColor')
-  public date!: string;
+  @Input('appBorderColor') public date: string;
 
   constructor(private elementRef: ElementRef, private renderer2: Renderer2) { }
 

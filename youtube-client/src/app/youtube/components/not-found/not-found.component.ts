@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
-  public text = 'Sorry, smth went wrong((';
+  public text: string = 'Sorry, smth went wrong((';
+
   constructor(public router: Router) { }
 
   goHome() {
