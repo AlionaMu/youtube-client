@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { YoutubeService } from '../../services/youtube-service';
+import { SearchService } from 'src/app/core/services/search-service';
+import { SearchItem } from 'src/app/core/models/search-item.model';
 import { GlobalService } from 'src/app/core/services/global-service';
+import { debounceTime } from 'rxjs/operators';
 
-//const videos: Array<SearchItem> = youtubeResponse.items;
 
 @Component({
   selector: 'app-results',
@@ -14,12 +15,17 @@ export class ResultsComponent implements OnInit {
   @Input() userInput: string;
   @Input() dateSort: boolean;
   @Input() viewSort: boolean;
-  videos: any;
-  //videos: SearchItem[] = [];
+  public videos: any;
+  public video: any
+  public items: SearchItem[];
 
-  constructor(public youtubeService: YoutubeService, public globalService: GlobalService) { }
+  constructor(public searchService: SearchService, public globalService: GlobalService) { }
 
   public ngOnInit(): void {
-    this.videos = this.youtubeService.videos;
+    this.searchService.data$.pipe(
+      debounceTime(500)
+      ).subscribe((data: any) => {
+      this.videos = data;
+    })
   }
 }

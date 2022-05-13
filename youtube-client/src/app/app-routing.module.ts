@@ -8,8 +8,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'auth',
-  loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: MainPageComponent, canActivate: [AuthGuard] },
   { path: 'video/:id', component: DetailedInfoPageComponent },
   { path: '**', component: NotFoundPageComponent }

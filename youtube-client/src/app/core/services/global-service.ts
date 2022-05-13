@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { SearchItem } from '../models/search-item.model';
-import { youtubeResponse } from '../../shared/mocks/response';
-
-const videos: Array<SearchItem> = youtubeResponse.items;
 
 
 @Injectable({
@@ -15,14 +12,14 @@ export class GlobalService {
   public userInput: string;
   public dateSort: boolean;
   public viewSort: boolean;
-
-  public videos: SearchItem[] = youtubeResponse.items;
+  public videos: any;
+  public items: SearchItem[];
 
   public openResults() {
     this.isResultsOpen = true;
   }
 
   public toggleSorting() {
-    this.isSortingOpen ? this.isSortingOpen = false : this.isSortingOpen = true;
+    this.isSortingOpen = !this.isSortingOpen
   }
 }

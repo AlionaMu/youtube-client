@@ -1,15 +1,50 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-//import { SearchResponse } from '../../youtube/models/search-response.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { mergeMap, map } from 'rxjs/operators';
+
+import { SearchItem } from '../models/search-item.model';
+import { SearchResponse } from '../models/search-response.model';
+import { StatisticRensponseItem, StatisticResponse  } from '../models/statistic-response.model';
+import { GlobalService } from './global-service';
+
 
 @Injectable({providedIn: 'root',})
 export class SearchService {
+  public data: SearchResponse;
+  public items: SearchItem[];
+  public headerInput: string;
+  public data$: BehaviorSubject<SearchItem[]> = new BehaviorSubject(null);
+  private apiKey: string ='AIzaSyDHsHK5sktwG3T3OXXyU3kaCXEShcSWMNQ';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public globalService: GlobalService) { }
 
-  searchRequest() {
-  /*  const url = 'https://github.com/rolling-scopes-school/tasks/blob/master/tasks/angular/response.json';
-    const res = this.http.get<SearchResponse>(url);
-    return res;*/
+  public getData() {
+    this.http.get<SearchResponse>(`https://www.googleapis.com/youtube/v3/search?key=${this.apiKey}&type=video&part=snippet&maxResults=15&q=${this.headerInput}`)
+    .pipe(
+      mergeMap<SearchResponse, Observable<Object>>((data: SearchResponse): Observable<Object> => {
+        this.data = data;
+        let items: SearchItem[] = [...data.items];
+        let idItems: string[] = items.map((item: SearchItem) => {
+          return item.id.videoId;
+        });
+        let idItemsStr: string = idItems.join(',');
+        return this.getStatistic(idItemsStr);
+      })).subscribe((data: any) => {
+       let statisticsItems: StatisticRensponseItem[] = data.items;
+        let oldData: SearchItem[] = this.data.items;
+        let newData: SearchItem[] = oldData.map(item => {
+          let newItem: SearchItem = item;
+          let idItem: string = item.id.videoId;
+          newItem.statistics = statisticsItems.filter(statisticItem =>
+            idItem === statisticItem.id)[0].statistics;
+          return newItem;
+        });
+        this.data$.next(newData);
+      });
+  }
+
+    public getStatistic(id: string): Observable<Object> {
+      return this.http.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${this.apiKey}&part=statistics`);
   }
 }

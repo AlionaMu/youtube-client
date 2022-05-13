@@ -7,9 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./sort-input.component.scss']
 })
 export class SortInputComponent {
-  @Output() getValue: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public getValue: EventEmitter<string> = new EventEmitter<string>();
+  public value: string = '';
 
-  value = '';
   constructor() { }
 
   getInputValue(event: any) {

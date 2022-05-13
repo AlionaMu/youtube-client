@@ -7,8 +7,7 @@ import { SearchItem } from '../../core/models/search-item.model';
 export class WordSortPipe implements PipeTransform {
   public transform(cards: SearchItem[], value: string): SearchItem[] {
     if (value) {
-      return cards.filter((card) => card.snippet.title.toLowerCase()
-      .indexOf(value.toLowerCase()) !== -1);
+      return cards.filter((card) => card.snippet.title.toLowerCase().includes(value));
     }
     return cards;
   }

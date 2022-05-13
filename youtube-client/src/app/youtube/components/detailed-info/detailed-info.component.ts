@@ -3,6 +3,7 @@ import { YoutubeService } from '../../services/youtube-service';
 import { SearchItem } from 'src/app/core/models/search-item.model';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { SearchService } from 'src/app/core/services/search-service';
 
 
 @Component({
@@ -12,13 +13,12 @@ import { Location } from '@angular/common';
 })
 export class DetailedInfoComponent implements OnInit {
   public video: SearchItem;
-  public id = this.youtubeService.videoId;
 
-  constructor(public youtubeService: YoutubeService, public route: ActivatedRoute, private location: Location) { }
+  constructor(public youtubeService: YoutubeService, public route: ActivatedRoute, public searchService: SearchService, private location: Location) { }
 
   public ngOnInit(): void {
     this.youtubeService.findVideo();
-    this.video = this.youtubeService.video;
+    this.video = this.youtubeService.video
   }
 
   public goToPreviousPage(): void {

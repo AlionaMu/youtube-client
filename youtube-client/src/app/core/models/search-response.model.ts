@@ -1,8 +1,12 @@
 import { SearchItem } from './search-item.model';
+import { PageInfoResponse } from './statistic-response.model';
+
 
 export interface SearchResponse {
-  kind: string;
   etag: string;
-  pageInfo: { [key: string]: number };
   items: SearchItem[];
+  kind: string;
+  nextPageToken?: string;
+  pageInfo: PageInfoResponse;
+  regionCode?: string;
 }

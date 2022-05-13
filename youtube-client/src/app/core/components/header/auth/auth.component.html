@@ -1,8 +1,4 @@
 <div class="auth">
-  <span>{{ name }}</span>
-  <a class="auth__icon"></a>
-</div>
-<div class="logout">
-  <span>Log out</span>
-  <div class="logout__icon" (click)="logout()"></div>
+  <span class="auth__info">{{ this.authService.logged ? 'Log Out' : 'Log In'}}</span>
+  <div class="auth__icon" (click)="logout()"></div>
 </div>
