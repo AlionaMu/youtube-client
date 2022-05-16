@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  public loginInput: string;
-  public passwordInput: string;
   public logged: boolean;
 
   constructor() {}
@@ -22,9 +20,9 @@ export class AuthService {
     this.logged = false;
   }
 
-  public saveToken(): void {
-    localStorage.setItem('login', this.loginInput);
-    localStorage.setItem('password', this.passwordInput);
+  public saveToken(login: string, password: string): void {
+    localStorage.setItem('login', login);
+    localStorage.setItem('password', password);
   }
 
   public isToken(): boolean {
