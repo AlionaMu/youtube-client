@@ -4,12 +4,14 @@ import { DetailedInfoPageComponent } from './youtube/page/detailed-info-page/det
 import { MainPageComponent } from './youtube/page/main-page/main-page.component';
 import { NotFoundPageComponent } from './youtube/page/not-found-page/not-found-page.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AdminPageComponent } from './youtube/page/admin-page/admin-page.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'home', component: MainPageComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminPageComponent },
   { path: 'video/:id', component: DetailedInfoPageComponent },
   { path: '**', component: NotFoundPageComponent }
 ];

@@ -1,0 +1,19 @@
+@import '../../../../shared/styles/variables.scss';
+
+.admin__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 24px;
+  outline: none;
+  background-color: $button-color;
+  color: $white-color;
+  padding: 1px;
+  border-radius: 7px;
+  box-shadow: 2px 0px 4px 0px $shadow-color;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}

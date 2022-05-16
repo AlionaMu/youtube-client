@@ -8,7 +8,6 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './core/guards/auth.guard';
 
-
 @NgModule({
   declarations: [
     AppComponent

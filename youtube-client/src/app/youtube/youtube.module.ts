@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './page/main-page/main-page.component';
 import { DetailedInfoPageComponent } from './page/detailed-info-page/detailed-info-page.component';
 import { NotFoundPageComponent } from './page/not-found-page/not-found-page.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminPageComponent } from './page/admin-page/admin-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -21,6 +23,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     DetailedInfoPageComponent,
     NotFoundPageComponent,
     NotFoundComponent,
+    AdminComponent,
+    AdminPageComponent,
     DetailedInfoComponent,
     ResultsComponent,
     CardComponent,

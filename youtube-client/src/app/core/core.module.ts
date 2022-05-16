@@ -8,6 +8,7 @@ import { AuthComponent } from './components/header/auth/auth.component';
 import { SortingComponent } from './components/sorting/sorting.component';
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { SortInputComponent } from '../../app/core/components/sorting/sort-input/sort-input.component';
+import { AdminButtonComponent } from './components/header/admin-button/admin-button.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SortInputComponent } from '../../app/core/components/sorting/sort-input
     SettingsButtonComponent,
     HeaderComponent,
     SortingComponent,
-    SortInputComponent
+    SortInputComponent,
+    AdminButtonComponent
   ],
   imports: [
     CommonModule,
