@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import {
-  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
 
+const MIN_LENGTH = 8;
 
 @Component({
   selector: 'app-login-form',
@@ -25,18 +25,13 @@ export class LoginFormComponent implements OnInit {
     private formBuilder: FormBuilder)
   { }
 
-  /*public get login(): AbstractControl | null {
-    return this.loginForm.get('login');
-  }
-
-  public get password(): AbstractControl | null {
-    return this.loginForm.get('password');
-  }*/
-
   public ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
+      password: new FormControl('',
+        [Validators.required,
+        Validators.minLength(MIN_LENGTH),
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@\?\]])/)])
     });
   }
 

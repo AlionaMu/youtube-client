@@ -27,6 +27,14 @@
       class="login__input-error"
       *ngIf="loginForm.get('password')?.hasError('required')"
     > Please enter a password </small>
+    <small
+    class="login__input-error"
+    *ngIf="loginForm.get('password')?.hasError('minlength')"
+    > Password must be at least 8 characters long </small>
+    <small
+    class="login__input-error"
+    *ngIf="loginForm.get('password')?.hasError('pattern')"
+    > Password must include uppercase and lowercase letters, number and at least one special character, e.g., ! @ # ? ] </small>
     <button class="login__button"
       type="submit"
       [disabled]="loginForm.invalid"

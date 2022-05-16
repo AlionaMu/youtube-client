@@ -43,6 +43,11 @@
       cursor: pointer;
       background-color: $button-hover-color;
     }
+    &:disabled {
+      cursor: unset;
+      background-color: $login-input-color;
+      color: $desc-font-color;
+    }
   }
   &__input-error {
     color: $error-color;
