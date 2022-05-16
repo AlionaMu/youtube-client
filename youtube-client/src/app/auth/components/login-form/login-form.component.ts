@@ -1,6 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 
 @Component({
@@ -8,24 +15,35 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
-  public loginValue: string;
-  public passwordValue: string;
+export class LoginFormComponent implements OnInit {
 
-  constructor(public authService: AuthService, public router: Router) { }
+  public loginForm: FormGroup = {} as FormGroup;
 
-  clickLoginInput(event: any): void {
-    this.loginValue = event.target.value;
-    this.authService.loginInput = event.target.value;
+  constructor(
+    public authService: AuthService,
+    public router: Router,
+    private formBuilder: FormBuilder)
+  { }
+
+  /*public get login(): AbstractControl | null {
+    return this.loginForm.get('login');
   }
 
-  clickPasswordInput(event: any): void {
-    this.passwordValue = event.target.value;
-    this.authService.passwordInput = event.target.value;
+  public get password(): AbstractControl | null {
+    return this.loginForm.get('password');
+  }*/
+
+  public ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      login: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
 
   submitForm(): void {
-    this.authService.saveToken();
+    const login: string = this.loginForm.get('login')?.value;
+    const password: string = this.loginForm.get('password')?.value;
+    this.authService.saveToken(login, password);
     this.router.navigateByUrl('/home');
   }
 }

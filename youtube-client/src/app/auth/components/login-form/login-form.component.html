@@ -1,10 +1,35 @@
 <div class="login">
   <h4 class="login__title">Login</h4>
-  <form action="#" class="login__form">
-    <label class="login__label" for="login-input">login</label>
-    <input id="login-input" placeholder="Your Name" class="login__input" type="text" (input)="clickLoginInput($event)">
-    <label class="login__label" for="login-input">password</label>
-    <input id="password-input" placeholder="Enter Password" class="login__input" type="text" (input)="clickPasswordInput($event)">
-    <button class="login__button" type="submit" (click)="submitForm()">Login</button>
+  <form class="login__form" [formGroup]="loginForm">
+    <label class="login__label">login</label>
+    <input
+      placeholder="Your Name"
+      formControlName="login"
+      class="login__input"
+      type="text"
+    >
+    <small
+    class="login__input-error"
+    *ngIf="loginForm.get('login')?.hasError('required')"
+    > Please enter a login email </small>
+    <small
+    class="login__input-error"
+    *ngIf="loginForm.get('login')?.hasError('email')"
+    > The login email is invalid </small>
+    <label class="login__label">password</label>
+    <input
+      placeholder="Enter Password"
+      formControlName="password"
+      class="login__input"
+      type="text"
+    >
+    <small
+      class="login__input-error"
+      *ngIf="loginForm.get('password')?.hasError('required')"
+    > Please enter a password </small>
+    <button class="login__button"
+      type="submit"
+      [disabled]="loginForm.invalid"
+      (click)="submitForm()">Login</button>
   </form>
 </div>
