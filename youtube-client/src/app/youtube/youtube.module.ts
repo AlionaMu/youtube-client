@@ -15,6 +15,7 @@ import { DateSortPipe } from './pipes/date-sort.pipe';
 import { ViewSortPipe } from './pipes/view-sort.pipe';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     ViewSortPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },

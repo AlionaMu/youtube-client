@@ -1,1 +1,89 @@
-<p>admin works!</p>
+<div class="admin-form">
+  <h4 class="admin-form__title">create new card</h4>
+  <form class="admin-form__form" [formGroup]="adminForm">
+    <label class="admin-form__label">title</label>
+    <input
+      placeholder="title"
+      formControlName="title"
+      class="admin-form__input"
+      type="text"
+    >
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('title')?.hasError('required')"
+    > Please enter a title </small>
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('title')?.hasError('minlength')"
+    > The title is too short </small>
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('title')?.hasError('maxlength')"
+    > The title is too long </small>
+
+    <label class="admin-form__label">description</label>
+    <input
+      placeholder="description"
+      formControlName="description"
+      class="admin-form__input"
+      type="text"
+    >
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('description')?.hasError('maxlength')"
+    > The description is too long </small>
+
+
+    <label class="admin-form__label">link to the image cover</label>
+    <input
+      placeholder="link to the image cover"
+      formControlName="img"
+      class="admin-form__input"
+      type="text"
+    >
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('img')?.hasError('required')"
+    > Please enter a link to the image </small>
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('img')?.hasError('pattern')"
+    > The image link is invalid </small>
+
+    <label class="admin-form__label">link to the video</label>
+    <input
+      placeholder="link to the video"
+      formControlName="video"
+      class="admin-form__input"
+      type="text"
+    >
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('video')?.hasError('required')"
+    > Please enter a link to the video </small>
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('video')?.hasError('pattern')"
+    > The video link is invalid </small>
+
+    <label class="admin-form__label">creation date</label>
+    <input
+      placeholder="creation date"
+      formControlName="date"
+      class="admin-form__input"
+      type="text"
+    >
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('date')?.hasError('required')"
+    > Please enter a creation date </small>
+    <small
+    class="admin-form__input-error"
+    *ngIf="adminForm.get('date')?.hasError('pattern')"
+    > The date is invalid ( **/**/**** )</small>
+    <button class="admin-form__button"
+      type="submit"
+      [disabled]="adminForm.invalid"
+      (click)="submitForm()">create card</button>
+  </form>
+</div>

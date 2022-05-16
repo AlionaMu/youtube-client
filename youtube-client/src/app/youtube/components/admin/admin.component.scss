@@ -1,0 +1,56 @@
+@import '../../../shared/styles/variables.scss';
+
+.admin-form {
+  width: 350px;
+  height: 500px;
+  padding: 20px 20px;
+  background-color: $login-bg-color;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    & > * {
+      margin-top: 8px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__label {
+    font-size: 12px;
+  }
+
+  &__input {
+    height: 37px;
+    background-color: $login-input-color;
+    border: none;
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  &__button {
+    width: 124px;
+    height: 30px;
+    background-color: $button-color;
+    border: none;
+    align-self: flex-end;
+    border-radius: 4px;
+    color: $white-color;
+    &:hover {
+      cursor: pointer;
+      background-color: $button-hover-color;
+    }
+    &:disabled {
+      cursor: unset;
+      background-color: $login-input-color;
+      color: $desc-font-color;
+    }
+  }
+  &__input-error {
+    color: $error-color;
+    font-size: 10px;
+  }
+}
