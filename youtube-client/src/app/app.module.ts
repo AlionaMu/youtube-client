@@ -7,6 +7,10 @@ import { YoutubeModule } from './youtube/youtube.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './core/guards/auth.guard';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './redux/reducers/app.reducer';
+import { CustomEffects } from './redux/effects/custom.effects';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { AuthGuard } from './core/guards/auth.guard';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([CustomEffects]),
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

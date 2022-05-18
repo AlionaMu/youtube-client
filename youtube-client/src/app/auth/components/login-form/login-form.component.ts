@@ -39,6 +39,7 @@ export class LoginFormComponent implements OnInit {
     const login: string = this.loginForm.get('login')?.value;
     const password: string = this.loginForm.get('password')?.value;
     this.authService.saveToken(login, password);
+    console.log('here')
     this.router.navigateByUrl('/home');
   }
 }

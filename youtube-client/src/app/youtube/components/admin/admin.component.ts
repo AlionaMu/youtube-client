@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
+  //AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
+/*import { CardState } from 'src/app/core/models/card-state.model';
+import { AdminService } from 'src/app/core/services/admin.service';
+import { Store } from '@ngrx/store';
+import { SetCustom } from 'src/app/redux/actions/custom.actions';*/
 
 const MIN_LENGTH = 3;
 const MAX_LENGTH = 20;
@@ -21,7 +26,10 @@ export class AdminComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private formBuilder: FormBuilder)
+    private formBuilder: FormBuilder
+   // public adminService: AdminService,
+    //public store: Store
+     )
   { }
 
   public ngOnInit(): void {
@@ -48,7 +56,31 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  submitForm(): void {
-    this.router.navigateByUrl('/home');
+  public submitForm(): void {
+    console.log('here', this.adminForm.status);
+    //this.create();
   }
+
+ /* private create(): void {
+    const controls: {[key: string]: AbstractControl} = this.adminForm.controls;
+
+    let controlsName =  Object.keys(controls);
+
+    if (this.adminForm.invalid) {
+      controlsName
+      .forEach(controlName => controls[controlName].markAsTouched());
+      return;
+    }
+    let newCardValue: CardState = this.adminForm.value;
+
+    controlsName.forEach(controlName => {
+        controls[controlName].setValue('');
+        controls[controlName].markAsUntouched();
+      });
+    this.adminService.setNewCard(newCardValue);
+
+    // eslint-disable-next-line ngrx/prefer-action-creator-in-dispatch
+    this.store.dispatch(new SetCustom());
+
+  }*/
 }
